@@ -35,7 +35,7 @@ Feel free to check the [issues page](`https://github.com/RashJrEdmund/scale-bala
 
 ## Live Site
 
-[Link](https://rashjredmund.github.io/Portfolio/)
+[Link](https://rashjredmund.github.io/scale-balance/)
 
 ## AUTHOR
 **RASH**
