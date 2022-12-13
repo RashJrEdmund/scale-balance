@@ -19,19 +19,23 @@ This page is basically built with just
 
 ## CLONE PROJECT
 * open your terminal
-* type and run this comand (`git clone git@github.com:RashJrEdmund/user-check-page.git`)
+* type and run this comand (`git clone git@github.com:RashJrEdmund/scale-balance.git`)
 * change to the project directory by entering: cd My-food
 * Note That: all this is done using your Linux terminal or git-bash for windows users.
 
 ## Command-line steps
 
-- $ git clone `https://github.com/RashJrEdmund/user-check-page`
+- $ git clone `https://github.com/RashJrEdmund/scale-balance`
 - $ `cd scale-balance`
 - $ `git checkout feature/body`
 
 ## CONTRIBUTION
 Contributions, issues, and feature requests are welcome!
-Feel free to check the [issues page](`https://github.com/RashJrEdmund/user-check-page/issues`).
+Feel free to check the [issues page](`https://github.com/RashJrEdmund/scale-balance/issues`).
+
+## Live Site
+
+[Link](https://rashjredmund.github.io/Portfolio/)
 
 ## AUTHOR
 **RASH**
