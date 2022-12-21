@@ -43,7 +43,7 @@ evaluateBtn.addEventListener('click', (e) => {
 })
 
 function balanceScale (elementone, elementtwo) {
-  const diff = ((elementone[1] - elementone[0])**2)**(1/2)
+  const diff = ((elementone[1] - elementone[0]) ** 2) ** (1 / 2)
   if (diff === 0) {
     result = 'scale is balanced'
     return result
