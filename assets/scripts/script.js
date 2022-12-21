@@ -61,7 +61,6 @@ function balanceScale (elementone, elementtwo) {
         result = [elementtwo[j + 1], elementtwo[i]]
       } else if ((elementtwo[i] + diff === elementtwo[j + 1])) {
         result = [elementtwo[j + 1], elementtwo[i]]
-
         return result
       } else {
         result = 'no number available to balance'
