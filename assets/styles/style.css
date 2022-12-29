@@ -43,7 +43,7 @@ input {
   background-color: #f0f8ff;
   height: fit-content;
   width: fit-content;
-  margin: 10px 0;
+  margin: 10px 20px;
   align-self: flex-end;
   padding: 10px 20px;
   border-radius: 4px;
@@ -64,4 +64,10 @@ input {
   width: 90%;
   margin: 10px auto;
   font-size: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+  .whole button {
+    transform: rotate(0);
+  }
 }
