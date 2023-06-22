@@ -1,70 +1,45 @@
-
-// submitBtn.addEventListener('click', () => {
-//   if((inputVallues.value == "")&&(displayResults.innerHTML == "")){
-//     alert('gran add Elements 1 and 2')
-//   } else {
-//     let arrVallues = weights.split(",")
-//     console.log(`arrVallues = ${arrVallues}`)
-
-//     let arrWeights = weights.split(",")
-//     console.log(`arrWeights = ${arrWeights}`)
-//   }
-// })
-
 const input1 = document.querySelector('#weights')
 const weightsToChose = document.querySelector('#list-0f-weights')
 const evaluateBtn = document.querySelector('#evaluate')
 const displayResults = document.querySelector('#display')
-let result
 
-evaluateBtn.addEventListener('click', (e) => {
-  console.log(input1.value)
-  if (input1.value === '') {
-    alert('Please input two weights to balance')
-  } else if (weightsToChose.value === '') {
-    alert('Please input optional weights to select from for scale balancing')
+evaluateBtn.addEventListener('click', () => {
+  if (input1.value.trim() === '') {
+    window.alert('Please input two weights to balance')
+  } else if (weightsToChose.value.trim() === '') {
+    window.alert('Please input optional weights to select from for scale balancing')
   } else {
     const elementoneArr = input1.value.split(',').map(Number)
     const elementtwoArr = weightsToChose.value.split(',').map(Number)
-    console.log(elementoneArr)
-    console.log(elementtwoArr)
 
     if (elementoneArr.length !== 2 || elementoneArr[0] === 0) {
-      displayResults.innerHTML = (
+      displayResults.innerHTML =
         'Weight added is less or more than two integers. Only two comma seperated weights can be added'
-      )
     } else {
-    // the scale balancing is processed by calling the balanceScale function
-      const result2 = balanceScale(elementoneArr, elementtwoArr)
-      displayResults.innerHTML = result
-      return result2
+      // the scale balancing is processed by calling the balanceScale function
+      displayResults.innerHTML = balanceScale(elementoneArr, elementtwoArr)
     }
   }
 })
 
 function balanceScale (elementone, elementtwo) {
-  const diff = ((elementone[1] - elementone[0]) ** 2) ** (1 / 2)
-  if (diff === 0) {
-    result = 'scale is balanced'
-    return result
-  }
+  const diff = ((elementone[1] - elementone[0]) ** 2) ** (1 / 2) // equivalence of Math.abs();
 
-  for (let z = 0; z < elementtwo.length; z++) {
-    if (elementtwo[z] === diff) {
-      result = [elementtwo[z]]
-      return result
-    }
-  }
+  if (diff === 0) return 'scale is already balanced'
+
+  let vall1, vall2, result1, result2
   for (let i = 0; i < elementtwo.length; i++) {
-    for (let j = 1; j < elementtwo.length; j++) {
-      if (elementtwo[i] + elementtwo[j + 1] === diff) {
-        result = [elementtwo[j + 1], elementtwo[i]]
-      } else if ((elementtwo[i] + diff === elementtwo[j + 1])) {
-        result = [elementtwo[i], elementtwo[j + 1]]
-        return result
-      } else {
-        result = 'no number available to balance'
+    for (let j = 0; j < elementtwo.length; j++) {
+      result1 = parseInt(elementone[0]) + parseInt(elementtwo[i])
+      result2 = parseInt(elementone[1]) + parseInt(elementtwo[j])
+      if (result1 === result2) {
+        vall1 = elementtwo[j]
+        vall2 = elementtwo[i]
+
+        return `The balance weight of ${elementone} are : ${vall1} and ${vall2}`
       }
     }
   }
+
+  return 'Scale Imbalanced'
 }

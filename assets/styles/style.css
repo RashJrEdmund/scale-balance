@@ -6,13 +6,17 @@
 
 body {
   background-color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .whole {
   background-color: #555;
   width: 95vw;
   max-width: 500px;
-  margin: 10rem auto;
+  margin: 0 auto;
   display: flex;
   flex-flow: column wrap;
   padding: 10px;
@@ -36,25 +40,24 @@ input {
   min-height: 50px;
   width: 100%;
   margin: 10px 0;
-  font-size: 25px;
+  padding: 5px;
+  font-size: 17px;
+}
+
+input::placeholder {
+  font-size: 15px;
 }
 
 .whole button {
-  background-color: #f0f8ff;
+  background-color: #000;
+  color: #fff;
   height: fit-content;
   width: fit-content;
   margin: 10px 20px;
   align-self: flex-end;
   padding: 10px 20px;
   border-radius: 4px;
-  transition: 0.6s;
-  transform: rotate(-40deg);
-}
-
-.whole button:hover {
-  background-color: #000;
-  color: #fff;
-  transform: rotate(0);
+  cursor: pointer;
 }
 
 .whole #display {
@@ -64,10 +67,4 @@ input {
   width: 90%;
   margin: 10px auto;
   font-size: 25px;
-}
-
-@media only screen and (max-width: 600px) {
-  .whole button {
-    transform: rotate(0);
-  }
 }

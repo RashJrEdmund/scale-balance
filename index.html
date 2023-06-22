@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/styles/style.css">
-  <title>Scale Balance</title>
-</head>
-<body>
-  <div class="whole">
-    <div class="input-section">
-      <label for="weight">Input 2 weights to balance</label>
-      <input type="text" id="weights" placeholder="use commas to seperate your values!!">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <title>Scale Balance</title>
+  </head>
+  <body>
+    <div class="whole">
+      <div class="input-section">
+        <label for="weight">Input 2 weights to balance. (Exp 5, 9)</label>
+        <input
+          type="text"
+          id="weights"
+          placeholder="input 2 comma seperated values!!. Exp 5, 9"
+        />
 
-      <label for="results">List of available weights to balance</label>
-      <input type="text" id="list-0f-weights" placeholder="use commas to seperate your values!!">
+        <label for="results"
+          >List of available weights to balance. (Exp 1, 2, 6, 7)</label
+        >
+        <input
+          type="text"
+          id="list-0f-weights"
+          placeholder="input 4 comma seperated balance values!!. Exp 1, 2, 6, 7"
+        />
+      </div>
+      <button id="evaluate">Evaluate</button>
+
+      <div id="display"></div>
     </div>
-    <button id="evaluate">Evaluate</button>
 
-    <div id="display"></div>
-  </div>
-
-  <script src="assets/scripts/script.js"></script>
-</body>
+    <script src="assets/scripts/script.js"></script>
+  </body>
 </html>
