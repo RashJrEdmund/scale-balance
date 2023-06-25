@@ -7,14 +7,16 @@ evaluateBtn.addEventListener('click', () => {
   if (input1.value.trim() === '') {
     window.alert('Please input two weights to balance')
   } else if (weightsToChose.value.trim() === '') {
-    window.alert('Please input optional weights to select from for scale balancing')
+    window.alert(
+      'Please input optional weights to select from for scale balancing'
+    )
   } else {
     const elementoneArr = input1.value.split(',').map(Number)
     const elementtwoArr = weightsToChose.value.split(',').map(Number)
 
     if (elementoneArr.length !== 2 || elementoneArr[0] === 0) {
       displayResults.innerHTML =
-        'Weight added is less or more than two integers. Only two comma seperated weights can be added'
+        "<span class='error'>Weight added is less or more than two integers. Only two comma seperated weights can be added</span>"
     } else {
       // the scale balancing is processed by calling the balanceScale function
       displayResults.innerHTML = balanceScale(elementoneArr, elementtwoArr)
@@ -36,10 +38,14 @@ function balanceScale (elementone, elementtwo) {
         vall1 = elementtwo[j]
         vall2 = elementtwo[i]
 
-        return `The balance weight of ${elementone} are : ${vall1} and ${vall2}`
+        if (elementone[0] >= elementone[1]) {
+          if (vall1 >= vall2) { return `The balance weight of ${elementone} are : ${vall2} and ${vall1}` } else { return `The balance weight of ${elementone} are : ${vall1} and ${vall2}` }
+        } else {
+          if (vall1 >= vall2) { return `The balance weight of ${elementone} are : ${vall1} and ${vall2}` } else { return `The balance weight of ${elementone} are : ${vall2} and ${vall1}` }
+        }
       }
     }
   }
 
-  return 'Scale Imbalanced'
+  return "<span class='error'>Scale Imbalanced</span>"
 }
